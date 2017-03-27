@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ROCK PAPER SCISSORS</title>
+  </head>
+  <body>
+
+    <!-- Placeholder = text inside input box -->
+    <input id="txtNickname" type="text" placeholder="enter a nickname"/>
+    <input id="txtMessage" type="text" placeholder="enter message"/>
+    <button id="btnPlay" type="button">Play</button>
+
+    <div id="lblUsers"></div>
+
+    <!-- Ajax: https://developers.google.com/speed/libraries/#jquery -->
+    <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+    </script>
+
+    <script type="text/javascript">
+      $("#btnPlay").click(function(){
+        // get text inside textbox
+        var sNickname = $("#txtNickname").val();
+        var uMessage = $("#txtMessage").val();
+        console.log(sNickname);
+        console.log(uMessage);
+        // var sndMessage = sNickname + uMessage
+        // AJAX
+        // takes only one argument, a JSON object.
+        // Empty JSON is {}, inside it you put key value pairs
+        // as {
+        // "url":"new-user/nickname"
+        // }
+        var sUrl = "/new-user/"+sNickname+"/msg/"+uMessage;
+        $.ajax({
+          "url": sUrl,
+          "method":"get"
+        });
+      });
+
+      setInterval(function(){
+        console.log("Sending Req. for Users");
+        $.ajax( {
+          "url":"/users",
+          "method":"get"
+          // function(saNicknames)
+        } ).done( function( saNicknames ){
+          // convert text to Array / object
+          // saNicknames instead of aNicknames if its a JSON
+          // console.log(aNicknames);
+          var aNicknames = JSON.parse( saNicknames );
+          $("#lblUsers").empty(); // clear elements in the div
+          for (var i = 0; i < aNicknames.length; i++) {
+            var sNickAndMsg = aNicknames[i];
+            //.txt .html
+            $("#lblUsers").append("<div>"+sNickAndMsg+"</div>");
+          }
+        } );
+      }, 1000);
+
+
+
+
+
+    </script>
+
+  </body>
+</html>

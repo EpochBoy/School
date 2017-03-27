@@ -1,0 +1,8 @@
+{
+  "author" : "Fredrik",
+
+  "dependencies":{
+    "express": "4.14.1",
+    "body-parser": "1.17.1"
+  }
+}

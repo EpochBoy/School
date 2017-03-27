@@ -1,0 +1,10 @@
+Banan,5,2
+Maelk,2,7
+Noedder,1,40
+Roed,6,10
+Groed,2,5
+Floede,1,10
+Salat,2,7
+Loeg,3,5
+Tomat,6,2
+Boef,2,50

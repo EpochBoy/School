@@ -1,0 +1,61 @@
+Mandatory I
+
+Make a how-to covering these subjects with Code examples and guides.
+
+Subjects covered so far:
+
+NODEJS / Not a server
+  - package.json
+  - npm init / allows you to create a package automode
+  - npm install /
+
+NODEMON / Server Debugging
+
+BUDO
+
+EXPRESS
+
+JSON
+
+SSH TO A SERVER
+
+  Raspberry Pi Example:
+    * ps aux | grep ssh / check if Server is running
+    * sudo raspi -config
+
+QUOTA / Its serverside
+
+SPACE in the server
+
+Flexbox
+
+CSS
+
+HTML
+
+FTP
+
+PORTS
+    0-1024 reserved ports, dont use it.
+    1025- MAXPORT not reserved, use these.
+
+FOREVER / This is used with Amazon AWS
+
+REST
+
+Query Strings
+
+  Search Engines dont like this:
+    facebook.com?userName=fredrikbjorklund
+  They like this:
+    facebook.com/user/fredrikbjorklund
+
+    Example2:
+      shop.com?products=all <- DONT
+
+      shop.com/products
+      shop.com/products/female/shoes/10
+      shop.com/products/male/shoes/12
+
+
+Arrays: Includes, indexOf

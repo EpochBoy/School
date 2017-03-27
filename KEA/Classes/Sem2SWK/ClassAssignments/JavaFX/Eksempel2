@@ -1,0 +1,33 @@
+package afleveringer.calcTask;
+
+public class Operator {
+    private static String square(Double firstOperand, Double secondOperand) {
+        double ret = firstOperand;
+            for (int i = 1; i < secondOperand; i++)
+                ret *= firstOperand;
+        return ((Double) ret).toString();
+    }
+    public static String calc(double firstOperand, double secondOperand, String operator) {
+
+        if (operator.equals("/") && secondOperand == 0.0)
+            throw new IllegalArgumentException("Trying to divide by zero");
+
+        switch (operator) {
+            case "+":
+                return ((Double) (firstOperand + secondOperand)).toString();
+            case "-":
+                return ((Double) (firstOperand - secondOperand)).toString();
+            case "*":
+                return ((Double) (firstOperand * secondOperand)).toString();
+            case "/":
+                return ((Double) (firstOperand / secondOperand)).toString();
+            case "sqrt":
+                return ((Double) Math.sqrt(firstOperand)).toString();
+            case "**":
+                return square(firstOperand, secondOperand);
+
+            default:
+                throw new Error("Received some strange stuff\n\nPlease send note to dev");
+        }
+    }
+}

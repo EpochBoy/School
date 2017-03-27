@@ -1,0 +1,17 @@
+REST
+
+GET REST
+
+a.com?id=1    / req.query.id
+a.com/id/:id  / req.params.id
+
+Let's Encrypt do SSL / HTTPS for free. https://letsencrypt.org
+
+GET - pass data via get is max 2kb / insecure
+
+POST - has unlimited data to the server / insecure
+
+PUT - This need id of the item and new DATA.
+
+DELETE - a.com?function=delete&id=1  - Search Engines hate this URL syntax
+         a.com/delete/1 - Search Engines love this params syntax, use this for SEO

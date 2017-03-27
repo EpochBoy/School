@@ -1,0 +1,12 @@
+{
+  "author":"Lasse Bjørklund",
+  "description":"THE MULTIPLAYER GAME",
+  "version":"1.0.0",
+  "license":"MIT",
+
+  "dependencies":
+  {
+      "express ":"4.14.1"
+  }
+
+}

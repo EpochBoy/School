@@ -1,0 +1,71 @@
+package afleveringer.calcTask;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class Calculator extends Application {
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        BorderPane pane = new BorderPane();
+        GridPane operatorPane = new GridPane();
+
+        VBox resultBox = new VBox();
+        VBox operatorBox = new VBox();
+
+        TextField firstOperandField = new TextField();
+        TextField secondOperandField = new TextField();
+        TextField resultField = new TextField();
+
+        Label firstOperandLabel = new Label("First operand");
+        Label secondOperandLabel = new Label("Second operand");
+        Label resultLabel = new Label();
+
+        ComboBox<String> operands = new ComboBox<>();
+        operands.getItems().addAll("+", "-", "*", "/", "sqrt", "**");
+
+        Button calculate = new Button("Calculate");
+        calculate.setOnAction(e -> {
+            if (firstOperandField.getText().equals("") || secondOperandField.getText().equals(""))
+                return;
+            double firstOperand = Double.parseDouble(firstOperandField.getText());
+            double secondOperand = Double.parseDouble(secondOperandField.getText());
+            String operand = operands.getValue();
+
+            String result = Operator.calc(firstOperand, secondOperand, operand);
+
+            resultField.setText(result);
+
+        });
+
+        operatorPane.setHgap(5);
+        operatorPane.setVgap(5);
+        operatorPane.addRow(0, firstOperandLabel, firstOperandField);
+        operatorPane.addRow(1, secondOperandLabel, secondOperandField);
+        operatorPane.add(operands, 1, 2);
+        operatorPane.add(calculate, 2, 2);
+        resultBox.getChildren().addAll(resultLabel, resultField);
+
+        pane.setCenter(operatorPane);
+        pane.setBottom(resultBox);
+
+        Scene scene = new Scene(pane);
+
+        primaryStage.setScene(scene);
+
+        primaryStage.setTitle("Muh Calculator");
+        primaryStage.show();
+    }
+}

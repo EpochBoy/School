@@ -1,0 +1,5 @@
+NodeMailer
+
+we will code a new file email.js
+
+when we run the file the email will be sent.
