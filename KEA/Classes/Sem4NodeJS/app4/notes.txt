@@ -1,0 +1,35 @@
+/*
+TODO BUILD ALL OF THIS FUNCTIONALITY FOR THE GAME
+
+server - port 80
+waiting register users
+get a users nickname
+tell Jane to wait /
+  Add new users here aswell
+    Check for unique nickname
+waiting for another users
+got a user Jon /
+  Add new user here aswell
+    check for unique nickanme
+at least two players, assign them to a match
+message saying, YOU CAN PLAY{}
+waiting to get answers, wait for 4 seconds
+informs the users about the result - win, loose, even
+ */
+
+
+// Store users using JSON Array
+/*
+[{"nickanme" : "Jon"}]
+
+if (more than 1 user start the game) {}
+
+message to the user : please wait -> 0
+message nr.2 : you are now playing "user2"
+
+{"status":"playing", "opponent":"Marius"}
+Now how to say game status won/loss/even
+{"status":"won"}
+Other messages: left the game
+{"status":"won-left-game", "opponent":"Marius"}
+*/

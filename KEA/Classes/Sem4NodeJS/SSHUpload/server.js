@@ -6,7 +6,6 @@ var fs = require("fs");
 var request = require('request');
 
 
-
 app.get("/", function(oReq, oRes){
   request('http://www.google.com', function (error, response, body) {
     //console.log('error:', error); // Print the error if one occurred

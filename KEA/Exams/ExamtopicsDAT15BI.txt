@@ -1,0 +1,46 @@
+﻿Note: NOT FINAL !!!
+	KEA - Fall 2016
+	
+
+Exam topics
+Course: SWC3
+
+
+No.
+	Topic / Subject
+	1
+	OOP
+Encapsulation
+Abstraction
+Inheritance
+Polymorphism
+	2
+	Interface
+Generics (Implement your data structure)
+	3
+	ADT
+List
+Set
+	4
+	Collection: Stack, Queue, Map
+	5
+	Efficiency (Big O)
+Searching Algorithms
+Sorting Algorithms
+	6
+	Threads
+Socket
+	7
+	UDP Sockets vs TCP Sockets
+	8
+	HTML
+CSS
+	9
+	JavaScript
+	10
+	Web APIs
+	11
+	Design patterns (any 2 - up to you)
+Strategy, Singleton, Flyweight, 
+Composite, Iterator
+Mediator, Observer, Decorator, MVC

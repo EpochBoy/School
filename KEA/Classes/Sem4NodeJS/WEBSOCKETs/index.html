@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sockets</title>
+  </head>
+  <body>
+
+    <input id="txtColor" type="text">
+    <button id="btnSend">Send Color</button>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.slim.min.js"></script>
+
+<script>
+  // This io.connect calls via CDNJS, which is a repository.
+  // This can be written just as "io();" or io("localhost");
+  // I prefer full URL though, for clarity.
+  var socket = io.connect("http://localhost:80");
+
+  socket.on( "change to this color" , function( jData ){
+    var sColor = jData.color;
+    $("body").css( {"background-color":sColor} );
+  });
+
+  $("#btnSend").click(function(){
+    var sColor = $("#txtColor").val(); // get me the contents of the box
+    socket.emit( "this is the color" , {"color":sColor} )
+  });
+
+
+
+
+
+  // socket.on("Welcome to Hell", function( jData ){
+  //   console.log("The server said bad bad things");
+  //   console.log("******************************");
+  //   console.log("The server send me this message: "+ jData.message);
+  // });
+  //
+  // $("#btnSend").click(function(){
+  //   console.log("test");
+  //   socket.emit("hi server I am clicking the button");
+  // });
+
+
+</script>
+
+
+  </body>
+</html>

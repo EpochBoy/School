@@ -1,0 +1,2 @@
+Sockets don't have to be on the same port as website delivery(80), these can be
+separate.
